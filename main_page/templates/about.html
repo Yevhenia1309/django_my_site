@@ -1,0 +1,19 @@
+<section id="about" class="about">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("media/about_us/about.jpg");'>
+            </div>
+            <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+                <div class="content">
+                    {% for item in about_us %}
+                        <h3>{{ item.title }}</h3>
+                        <p class="fst-italic">
+                        {{ item.description }}
+                        </p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End About Section -->
+

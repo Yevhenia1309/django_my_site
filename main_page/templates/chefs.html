@@ -1,0 +1,28 @@
+<!-- ======= Chefs Section ======= -->
+<section id="chefs" class="chefs">
+    <div class="container">
+        <div class="section-title">
+            <h2>Наші професійні <span>Шефи</span></h2>
+        </div>
+
+            <div class="row">
+                {% for item in chefs %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member">
+                            <div class="pic"><img src="{{ item.photo.url }}" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>{{ item.title }}</h4>
+                                <span>{{ item.description }}</span>
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    </div>
+</section><!-- End Chefs Section -->

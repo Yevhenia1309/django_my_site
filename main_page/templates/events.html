@@ -1,0 +1,33 @@
+<!-- ======= Events Section ======= -->
+<section id="events" class="events">
+    <div class="container">
+        <div class="section-title">
+            <h2>Відствяткуйте <span>свята</span> в нашому ресторані</h2>
+        </div>
+
+        <div class="events-slider swiper">
+            <div class="swiper-wrapper">
+                {% for item in events %}
+                    <div class="swiper-slide">
+                        <div class="row event-item">
+                            <div class="col-lg-6">
+                                <img src={{ item.photo.url }} class="img-fluid" alt="">
+                            </div>
+                            <div class="col-lg-6 pt-4 pt-lg-0 content">
+
+                                <h3>{{ item.title }}</h3>
+                                <div class="price">
+                                    <p><span>{{ item.price }} UAH</span></p>
+                                </div>
+                                <p class="fst-italic">
+                                    {{ item.description }}
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+                {% endfor %}
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section><!-- End Events Section -->

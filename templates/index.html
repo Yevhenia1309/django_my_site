@@ -1,0 +1,135 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Delicious Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href={% static "assets/img/favicon.png" %} rel="icon">
+    <link href={% static "assets/img/apple-touch-icon.png" %} rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={% static "assets/vendor/animate.css/animate.min.css" %} rel="stylesheet">
+    <link href={% static "assets/vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet">
+    <link href={% static "assets/vendor/bootstrap-icons/bootstrap-icons.css" %} rel="stylesheet">
+    <link href={% static "assets/vendor/boxicons/css/boxicons.min.css" %} rel="stylesheet">
+    <link href={% static "assets/vendor/glightbox/css/glightbox.min.css" %} rel="stylesheet">
+    <link href={% static "assets/vendor/swiper/swiper-bundle.min.css" %} rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href={% static "assets/css/style.css" %} rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: Delicious - v4.8.0
+    * Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Top Bar ======= -->
+    <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
+            <i class="bi bi-phone d-flex align-items-center"><span>+38 044 567-65-78</span></i>
+            <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Понеділок-Неділя: 11:00 - 23:00 </span></i>
+        </div>
+    </section>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <div class="logo me-auto">
+                <h1><a href="index.html">Dolce Vita</a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Головна</a></li>
+                <li><a class="nav-link scrollto" href="#about">Про нас</a></li>
+                <li><a class="nav-link scrollto" href="#menu">Меню</a></li>
+                <li><a class="nav-link scrollto" href="#specials">Спеціальне меню</a></li>
+                <li><a class="nav-link scrollto" href="#events">Заходи</a></li>
+                <li><a class="nav-link scrollto" href="#chefs">Шефи</a></li>
+                <li><a class="nav-link scrollto" href="#gallery">Галерея</a></li>
+                <li class="dropdown"><a href="#"><span>Акаунт</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        {% if not user_auth %}
+                            <li><a href={% url 'login_view' %}>Log in</a></li>
+                            <li><a href={% url 'registration_view' %}>Registration</a></li>
+                        {% else %}
+                            <li><a href={% url 'logout_view' %}>Log out</a></li>
+                        {% endif %}
+                    </ul>
+                    {% if user_manager %}
+                        <li class="dropdown"><a href="#"><span>Менеджер</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href={% url 'main_page:list_reservations' %}>List of reservations</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                <li><a class="nav-link scrollto" href="#contact">Контакти</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="#book-a-table" class="book-a-table-btn scrollto">Бронювання столу</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+
+  <main id="main">
+      {% block main_content %}
+      {% endblock %}
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+      <div class="container">
+          <h3>Dolce Vita</h3>
+          <p>Невимушена атмосфера налаштовує на відмінний відпочинок, який залишає після себе ланцюжок приємних спогадів та відчуттів.</p>
+          <div class="social-links">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          </div>
+          <div class="copyright">
+              &copy; Copyright <strong><span>Dolce Vita</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+          </div>
+      </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src={% static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}></script>
+  <script src={% static "assets/vendor/glightbox/js/glightbox.min.js" %}></script>
+  <script src={% static "assets/vendor/isotope-layout/isotope.pkgd.min.js" %}></script>
+  <script src={% static "assets/vendor/swiper/swiper-bundle.min.js" %}></script>
+
+
+  <!-- Template Main JS File -->
+  <script src={% static "assets/js/main.js" %}></script>
+
+</body>
+
+</html>

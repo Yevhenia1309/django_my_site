@@ -1,0 +1,24 @@
+<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <!-- Slide 1 -->
+            {% for item in home %}
+                <div class="carousel-item active" style="background-image: url(media/home/about.jpg);">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown"><span>Dolce</span> Vita</h2>
+                            <p class="animate__animated animate__fadeInUp">{{ item.description }}</p>
+                        <div>
+                            <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Меню</a>
+                            <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Бронювання столу</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</section><!-- End Hero -->
